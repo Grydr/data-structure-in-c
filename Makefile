@@ -1,4 +1,3 @@
-BUILD_DIR := build
 SRC_DIR := src
 BIN_DIR := bin
 
@@ -7,21 +6,18 @@ CFLAGS := -Wall -Wextra -Wpedantic
 OPTIMIZATION := -O2
 
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
-OBJS_FILES := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRC_FILES))
 EXE_FILES := $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%,$(SRC_FILES))
 
-$(EXE_FILES): $(OBJS_FILES) | dir
-	$(CC) $(CFLAGS) $(OPTIMIZATION) $^ -o $@ 
+all: $(EXE_FILES)
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | dir 
-	$(CC) $(CFLAGS) $(OPTIMIZATION) -c $< -o $@ 
+$(BIN_DIR)/%: $(SRC_DIR)/%.c | dir
+	$(CC) $(CFLAGS) $(OPTIMIZATION) $< -o $@
 
 dir:
-	@mkdir -p $(BUILD_DIR)
 	@mkdir -p $(BIN_DIR)
 
 clean:
-	rm -rf build
+	rm -rf $(BIN_DIR)
 
 .PHONY:
 	dir clean
