@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <errno.h>
 #include <stdlib.h>
 
 // darray struct
