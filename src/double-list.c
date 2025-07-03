@@ -7,7 +7,7 @@ typedef struct D_Node_t {
     struct D_Node_t *next, *prev;
 } DListNode;
 
-typedef struct S_List_t {
+typedef struct D_List_t {
     size_t size;
     struct D_Node_t *head, *tail;
 } DList;

@@ -61,5 +61,7 @@ int main() {
         printf("%d\n", top(&myStack));
         pop(&myStack);
     }
+
+    free(myStack.data);
     return 0;
 }
