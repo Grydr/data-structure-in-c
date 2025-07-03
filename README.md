@@ -1,5 +1,8 @@
 # Data Structure Implementation in C
 
+## TODO
+- add comment on every file
+
 ## Data Structures
 1. Dynamic Array
 2. Linked List
