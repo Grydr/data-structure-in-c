@@ -151,19 +151,6 @@ void setAt(D_Array *darray, unsigned int index, int value) {
 }
 
 void insertAt(D_Array *darray, unsigned int index, int value) {
-    /*
-        move all value after the index to one index after
-
-        if empty and index != 0 return
-        
-        if size is less than caps
-        allocate new arr, copy until index(without index)
-        insert value at index
-        continue copying after index
-        else
-        allocate new arr with more mem
-    */
-
     if (isEmpty(darray) && index != 0) {
         fprintf(stderr, "ERROR: array is empty: \n");
         return;
