@@ -5,6 +5,12 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Wpedantic
 OPTIMIZATION := -O2
 
+DEBUG ?= 0
+
+ifeq ($(DEBUG), 1)
+CFLAGS += -g
+endif
+
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
 EXE_FILES := $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%,$(SRC_FILES))
 
