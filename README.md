@@ -11,3 +11,4 @@
 5. Dequeue
 6. Priority Queue
 7. Binary Search Tree
+8. AVL Tree
